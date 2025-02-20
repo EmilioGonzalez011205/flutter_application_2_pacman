@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//Este documento se encarga de darle la estructura al mapa, los colores de fondo, la comida, las barreras, etc.
 class Pixel extends StatelessWidget {
   const Pixel({super.key, this.innerColor, this.outerColor, this.child});
 

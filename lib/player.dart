@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//Este archivo fué creado para mostrar la imagen del pacman en la pantalla.
 class Player extends StatelessWidget {
   const Player({super.key});
 

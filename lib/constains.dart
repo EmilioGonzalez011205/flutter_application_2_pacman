@@ -1,3 +1,5 @@
+//Este archivo fue creado para crear las barreras, las cuales representan los límites o paredes que el pacman 
+//no puede atravesar.
 class Constains {
   static List<int> barriers = [
     0,

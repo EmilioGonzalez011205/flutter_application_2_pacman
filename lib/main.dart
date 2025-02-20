@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:flutter_application_2_pacman/home_page.dart";
-
+//Este documento es el principal que se encarga de la inicialización de la aplicación.
 void main() {
   runApp(const MyApp());
 }

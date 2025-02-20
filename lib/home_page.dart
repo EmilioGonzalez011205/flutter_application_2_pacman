@@ -54,11 +54,12 @@ class _HomePageState extends State<HomePage> {
   String ghostLast2 = 'up';
   String ghostLast3 = 'down';
 
+  //Función para iniciar el juego y configurar los temporizadores
   void startGame() {
     if (preGame) {
       preGame = false;
       getFood();
-
+      //Función para detectar la colisión de un fantasma
       Timer.periodic(Duration(milliseconds: 10), (timer) {
         if (player == ghost || player == ghost2 || player == ghost3) {
           setState(() {
@@ -108,6 +109,7 @@ class _HomePageState extends State<HomePage> {
               });
         }
       });
+      //Temporizador para mover a los fantasmas
       Timer.periodic(Duration(milliseconds: 190), (timer) {
         if (!paused) {
           moveGhost();
@@ -115,6 +117,7 @@ class _HomePageState extends State<HomePage> {
           moveGhost3();
         }
       });
+      //Temporizador para mover el pacman y consumir comida
       Timer.periodic(Duration(milliseconds: 170), (timer) {
         setState(() {
           mouthClosed = !mouthClosed;
@@ -148,7 +151,7 @@ class _HomePageState extends State<HomePage> {
     getFood();
     super.initState();
   }
-
+  //Función para consumir la comida
   void getFood() {
     for (int i = 0; i < numberOfSquares; i++) {
       if (!Constains.barriers.contains(i)) {
@@ -160,7 +163,7 @@ class _HomePageState extends State<HomePage> {
   void restart() {
     startGame();
   }
-
+  //Funciones para mover al pacman
   void moveLeft() {
     if (!Constains.barriers.contains(player - 1)) {
       setState(() {
@@ -192,7 +195,7 @@ class _HomePageState extends State<HomePage> {
       });
     }
   }
-
+  //Función para mover a los fantasmsas
   void moveGhost() {
     switch (ghostLast) {
       case "left":
@@ -501,7 +504,9 @@ class _HomePageState extends State<HomePage> {
         break;
     }
   }
-
+  //Lo que resta del código es para darle formato a la pantalla de incio y configurar algunos aspectos de la lógica
+  //tales como los giros del pacman y el movimiento de los fantasmas, pero es más que nada para 
+  // darle color y personalidad a los widgets, icons, etc. 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
